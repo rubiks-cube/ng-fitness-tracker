@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { StopTrainingComponent } from './training/current-training/stop.current.training';
+import { AuthService } from './auth/auth.service';
+import { TrainingService } from './training/training.service';
 
 
 
@@ -44,7 +46,7 @@ import { StopTrainingComponent } from './training/current-training/stop.current.
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents : [StopTrainingComponent]
 })
