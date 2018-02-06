@@ -35,7 +35,9 @@ private exChangedSubscription: Subscription;
     this.dataSource.paginator = this.paginator;
   }
   ngOnDestroy() {
- this.exChangedSubscription.unsubscribe();
+    if (this.exChangedSubscription) {
+    this.exChangedSubscription.unsubscribe();
+    }
   }
 
 }
