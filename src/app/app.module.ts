@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MaterialModule} from './material.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
-
+import {StoreModule} from '@ngrx/store';
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import { TrainingService } from './training/training.service';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import {reducers} from './app.reducer';
 
 
 
@@ -41,7 +42,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot(reducers)
 
   ],
   providers: [AuthService, TrainingService, UIService],
